@@ -2,6 +2,9 @@ package dev.berunoh.CadastroDeNinjas.Ninjas;
 
 import dev.berunoh.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -9,6 +12,10 @@ import java.util.List;
 // JPA(Java Persistence API)
 @Entity
 @Table(name = "tb_cadastro") // Tabela com o nome , utilizando snake case
+@Data // Criar todos os getters e setters
+@NoArgsConstructor // Criação de construtores vazio
+@AllArgsConstructor // Criação de construtores com argumentos , alem de criar getters e setters.
+
 public class NinjaModel {
 
     @Id
@@ -24,37 +31,6 @@ public class NinjaModel {
     //JoinColumn cria uma nova tabela chamada "missoes_id"
     private MissoesModel missoes;
 
-    // All Constructor
-    public NinjaModel(int idade, String email, String nome) {
-        this.idade = idade;
-        this.email = email;
-        this.nome = nome;
-    }
-    // No All Constructor
-    public NinjaModel() {
-    }
 
-    public int getIdade() {
-        return idade;
-    }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
 }
