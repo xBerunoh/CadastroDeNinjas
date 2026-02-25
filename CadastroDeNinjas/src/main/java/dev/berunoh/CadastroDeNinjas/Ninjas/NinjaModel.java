@@ -21,8 +21,12 @@ public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Geração de números
     private long id;
+
     private int idade;
+
+    @Column(unique = true) // Essa coluna ela é unica ! utilizando o @Column
     private String email;
+
     private String nome;
 
     // Utilizar o @ManyToMany , para apenas um unico ninja !
