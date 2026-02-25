@@ -1,6 +1,9 @@
-package dev.berunoh.CadastroDeNinjas;
+package dev.berunoh.CadastroDeNinjas.Ninjas;
 
+import dev.berunoh.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 // Entity ele transforma uma classe em uma entidade do BD.
 // JPA(Java Persistence API)
@@ -14,6 +17,12 @@ public class NinjaModel {
     private int idade;
     private String email;
     private String nome;
+
+    // Utilizar o @ManyToMany , para apenas um unico ninja !
+    @ManyToOne
+    @JoinColumn(name = "missoes_id") // Foreing Key ou chave estrangeira
+    //JoinColumn cria uma nova tabela chamada "missoes_id"
+    private MissoesModel missoes;
 
     // All Constructor
     public NinjaModel(int idade, String email, String nome) {
