@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Data // Criar todos os getters e setters
 @NoArgsConstructor // Criação de construtores vazio
 @AllArgsConstructor // Criação de construtores com argumentos , alem de criar getters e setters.
+
 public class MissoesModel {
 
     @Id
