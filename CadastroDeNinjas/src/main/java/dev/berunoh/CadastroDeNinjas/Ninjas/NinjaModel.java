@@ -20,13 +20,19 @@ public class NinjaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Geração de números
+    @Column (name = "id_gerado_sequencial")
     private long id;
 
+    @Column (name = "idade")
     private int idade;
+
+    @Column (name = "img_url")
+    private String imgUrl;
 
     @Column(unique = true) // Essa coluna ela é unica ! utilizando o @Column
     private String email;
 
+    @Column (name = "nome")
     private String nome;
 
     // Utilizar o @ManyToMany , para apenas um unico ninja !
