@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 
 @Entity // Fazer a nossa classe se tornar uma entidade
 @Table (name = "tb_missoes")
@@ -23,7 +25,7 @@ public class MissoesModel {
     private String dificuldade;
 
     @OneToMany(mappedBy = "missoes") // @OneToMany , muitos elementos podem ter varias missões
-    private NinjaModel ninjas;
+    private List<NinjaModel> ninjas;
 
 
 
