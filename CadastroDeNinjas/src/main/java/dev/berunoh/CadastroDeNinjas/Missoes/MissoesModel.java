@@ -1,5 +1,6 @@
 package dev.berunoh.CadastroDeNinjas.Missoes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.berunoh.CadastroDeNinjas.Ninjas.NinjaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -25,6 +26,7 @@ public class MissoesModel {
     private String dificuldade;
 
     @OneToMany(mappedBy = "missoes") // @OneToMany , muitos elementos podem ter varias missões
+    @JsonIgnore // Resolver o problema de loop de SERIALIZAÇÃO
     private List<NinjaModel> ninjas;
 
 

@@ -2,9 +2,18 @@ package dev.berunoh.CadastroDeNinjas.Ninjas;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/ninjas")
 public class NinjaController {
+
+    // INJETAR DEPENDENCIAS
+    private NinjaService ninjaService;
+
+    public NinjaController(NinjaService ninjaService) {
+        this.ninjaService = ninjaService;
+    }
 
     @GetMapping("/boasVindas")
     public String boasVindas(){
@@ -20,14 +29,14 @@ public class NinjaController {
 
     // (endpoint) Mostrar todos os Ninjas (READ)
     @GetMapping("/listar")
-    public String mostrarTodosOsNinjas(){
-        return "Mostrar Ninjas";
+    public List<NinjaModel> listarNinjas(){
+        return ninjaService.listarNinjas();
     }
 
     // (endpoint) Mostrar todos os ninjas por ID (READ)
     @GetMapping("/listarID")
-    public String mostrarTodosOsNinjasPorID(){
-        return "Mostrar Ninja por id";
+    public List<NinjaModel> listarNinjasID(){
+        return listarNinjasID();
     }
 
     // (endpoint) Alterar dados dos ninjas (UPDATE)
