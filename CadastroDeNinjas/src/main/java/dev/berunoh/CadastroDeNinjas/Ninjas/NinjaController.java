@@ -2,8 +2,8 @@ package dev.berunoh.CadastroDeNinjas.Ninjas;
 
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping
 @RestController
+@RequestMapping("/ninjas")
 public class NinjaController {
 
     @GetMapping("/boasVindas")
@@ -19,13 +19,13 @@ public class NinjaController {
     }
 
     // (endpoint) Mostrar todos os Ninjas (READ)
-    @GetMapping("/todos")
+    @GetMapping("/listar")
     public String mostrarTodosOsNinjas(){
         return "Mostrar Ninjas";
     }
 
     // (endpoint) Mostrar todos os ninjas por ID (READ)
-    @GetMapping("/todosID")
+    @GetMapping("/listarID")
     public String mostrarTodosOsNinjasPorID(){
         return "Mostrar Ninja por id";
     }
