@@ -21,7 +21,7 @@ public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Geração de números
     @Column (name = "id_gerado_sequencial")
-    private long id;
+    private Long id;
 
     @Column (name = "idade")
     private int idade;
