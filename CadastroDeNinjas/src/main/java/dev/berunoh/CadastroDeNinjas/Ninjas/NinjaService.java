@@ -28,5 +28,11 @@ public class NinjaService {
     return ninjaModel.orElse(null); // Caso não tenha mostra o usuário NULL.
     }
 
+    // Criar um novo um ninja
+
+    public NinjaModel criarNinja(NinjaModel ninja){
+        return ninjaRepository.save(ninja);
+    }
+
 
 }
