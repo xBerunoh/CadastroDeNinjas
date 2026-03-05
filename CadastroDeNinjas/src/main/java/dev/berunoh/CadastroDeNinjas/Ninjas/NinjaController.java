@@ -11,7 +11,7 @@ import java.util.List;
 public class NinjaController {
 
     // INJETAR DEPENDENCIAS
-    private NinjaService ninjaService;
+    private final NinjaService ninjaService;
 
     public NinjaController(NinjaService ninjaService) {
         this.ninjaService = ninjaService;
@@ -41,7 +41,7 @@ public class NinjaController {
     // (endpoint) Mostrar todos os ninjas por ID (READ)
     // Utilizamos o PathVariable na rota {id}
     @GetMapping("/listar/{id}")
-    public ResponseEntity<String> listarNinjasID(@PathVariable Long id){
+    public ResponseEntity<?> listarNinjasID(@PathVariable Long id){
         NinjaDTO ninja=  ninjaService.listarNinjasPorId(id);
         if(ninja!= null){
             return ResponseEntity.ok("Ninja encontrado:\n"+ninja);
